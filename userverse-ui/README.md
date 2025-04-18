@@ -6,6 +6,10 @@ A responsive, elegant, and functional UI for a user management app built for the
 
 This project is a mobile-first user management app where users can register, manage their profiles, adjust settings, and admins can view/control user lists. The UI is designed to be intuitive, modern, and cohesive with the Userverse UI Quest theme—a futuristic, user-centric journey.
 
+## Demo
+
+![Userverse UI Demo](assets/demo.gif)
+
 ## Features
 
 ### Day 1: Sign Up & Sign In (30 XP)
