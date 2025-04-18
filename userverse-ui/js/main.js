@@ -1155,6 +1155,66 @@ function renderUserPanel(container) {
             dropdown.classList.add('hidden');
         }
     });
+    
+    // Add filter functionality
+    const filterLinks = document.querySelectorAll('#filter-dropdown a');
+    filterLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const filterText = link.textContent.trim();
+            
+            // Update filter button text to show active filter
+            const filterBtnText = document.querySelector('#filter-dropdown-btn span');
+            filterBtnText.textContent = filterText;
+            
+            // Hide dropdown
+            document.getElementById('filter-dropdown').classList.add('hidden');
+            
+            // Filter logic
+            const userCards = document.querySelectorAll('.user-card');
+            
+            // Filter by status
+            if (filterText === 'All Users') {
+                userCards.forEach(card => card.classList.remove('hidden'));
+                showToast('Showing all users', 'info');
+            } 
+            else if (filterText === 'Active' || filterText === 'Inactive') {
+                const isActive = filterText === 'Active';
+                
+                userCards.forEach(card => {
+                    const statusIndicator = card.querySelector('.absolute.bottom-0.right-0');
+                    const isUserActive = statusIndicator.classList.contains('bg-green-400');
+                    
+                    if (isUserActive === isActive) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                
+                showToast(`Showing ${filterText.toLowerCase()} users`, 'info');
+            }
+            // Filter by role
+            else if (filterText === 'All Roles') {
+                userCards.forEach(card => card.classList.remove('hidden'));
+                showToast('Showing users of all roles', 'info');
+            }
+            else if (['Admin', 'Editor', 'User'].includes(filterText)) {
+                userCards.forEach(card => {
+                    const roleSpan = card.querySelector('.bg-indigo-100');
+                    const role = roleSpan.textContent.trim();
+                    
+                    if (role === filterText) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                
+                showToast(`Showing ${filterText} users`, 'info');
+            }
+        });
+    });
 }
 
 // Toggle dark mode
