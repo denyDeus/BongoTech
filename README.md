@@ -4,7 +4,7 @@ A responsive, elegant, and functional UI for user management built during the Us
 
 ## Demo
 
-![Userverse UI Demo](userverse-ui/assets/demo.gif)
+![Userverse UI Demo](userverse-ui/assets/demo2.gif)
 
 ## Main Implementation
 

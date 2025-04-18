@@ -8,7 +8,7 @@ This project is a mobile-first user management app where users can register, man
 
 ## Demo
 
-![Userverse UI Demo](assets/demo.gif)
+![Userverse UI Demo](assets/demo2.gif)
 
 ## Features
 
