@@ -503,7 +503,7 @@ function showToast(message, type = 'info') {
 function renderSettings(container) {
     const settingsHTML = `
         <div class="animate-fade-in">
-            <div class="relative mb-10">
+            <div class="relative mb-16">
                 <div class="absolute top-0 left-0 w-full h-28 bg-gradient-secondary rounded-b-3xl"></div>
                 
                 <div class="relative pt-4 px-4 flex justify-between items-center">
@@ -695,18 +695,18 @@ function renderUserPanel(container) {
     const userCardsHTML = users.map(user => `
         <div data-user-id="${user.id}" class="user-card animate-fade-in card-hover bg-white rounded-xl shadow-md overflow-hidden mb-4">
             <div class="flex items-center justify-between p-4">
-                <div class="flex items-center">
+                <div class="flex items-center flex-1">
                     <div class="relative">
                         <img src="${user.avatar}" alt="${user.name}" class="h-14 w-14 rounded-full object-cover border-2 ${user.active ? 'border-green-400' : 'border-gray-300'}">
                         <div class="absolute bottom-0 right-0 h-3 w-3 rounded-full ${user.active ? 'bg-green-400' : 'bg-gray-300'} ring-2 ring-white"></div>
                     </div>
-                    <div class="ml-4">
+                    <div class="ml-4 overflow-hidden">
                         <h3 class="font-medium text-gray-800">${user.name}</h3>
-                        <p class="text-sm text-gray-500">${user.email}</p>
+                        <p class="text-sm text-gray-500 truncate">${user.email}</p>
                     </div>
                 </div>
-                <div class="flex items-center">
-                    <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded mr-2">
+                <div class="flex items-center ml-2">
+                    <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded whitespace-nowrap mr-2">
                         ${user.role}
                     </span>
                     <button class="user-menu-btn text-gray-500 hover:text-gray-800 focus:outline-none p-1" data-user-id="${user.id}">
