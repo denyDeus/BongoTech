@@ -695,17 +695,17 @@ function renderUserPanel(container) {
     const userCardsHTML = users.map(user => `
         <div data-user-id="${user.id}" class="user-card animate-fade-in card-hover bg-white rounded-xl shadow-md overflow-hidden mb-4">
             <div class="flex items-center justify-between p-4">
-                <div class="flex items-center flex-1">
-                    <div class="relative">
+                <div class="flex items-center flex-1 overflow-hidden">
+                    <div class="relative flex-shrink-0">
                         <img src="${user.avatar}" alt="${user.name}" class="h-14 w-14 rounded-full object-cover border-2 ${user.active ? 'border-green-400' : 'border-gray-300'}">
                         <div class="absolute bottom-0 right-0 h-3 w-3 rounded-full ${user.active ? 'bg-green-400' : 'bg-gray-300'} ring-2 ring-white"></div>
                     </div>
-                    <div class="ml-4 overflow-hidden">
+                    <div class="ml-4 min-w-0 overflow-hidden flex-1">
                         <h3 class="font-medium text-gray-800">${user.name}</h3>
                         <p class="text-sm text-gray-500 truncate">${user.email}</p>
                     </div>
                 </div>
-                <div class="flex items-center ml-2">
+                <div class="flex items-center ml-2 flex-shrink-0">
                     <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded whitespace-nowrap mr-2">
                         ${user.role}
                     </span>
