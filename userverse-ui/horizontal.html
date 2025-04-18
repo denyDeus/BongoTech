@@ -41,6 +41,12 @@
             height: 100%;
             border: 12px solid #2d2d2d;
         }
+        
+        .screen-content {
+            height: 100%;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen p-8">
@@ -51,7 +57,7 @@
             <!-- Sign Up Screen -->
             <div class="screen">
                 <div class="screen-wrapper">
-                    <div class="p-6 h-full overflow-y-auto">
+                    <div class="screen-content">
                         <div class="flex flex-col items-center justify-center animate-fade-in">
                             <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">Create Account</h1>
                             
@@ -139,7 +145,7 @@
             <!-- Profile Screen -->
             <div class="screen">
                 <div class="screen-wrapper">
-                    <div class="p-6 h-full overflow-y-auto">
+                    <div class="screen-content">
                         <div class="animate-fade-in">
                             <div class="flex items-center justify-between mb-6">
                                 <h1 class="text-2xl font-bold text-gray-800">Profile</h1>
@@ -208,7 +214,7 @@
             <!-- Settings Screen (Optional) -->
             <div class="screen">
                 <div class="screen-wrapper">
-                    <div class="p-6 h-full overflow-y-auto">
+                    <div class="screen-content">
                         <div class="animate-fade-in">
                             <div class="relative mb-16">
                                 <div class="absolute top-0 left-0 w-full h-28 bg-gradient-secondary rounded-b-3xl"></div>

@@ -550,7 +550,7 @@ input:checked + .slider .circle {
 .mobile-frame {
     position: relative;
     max-width: 375px;
-    min-height: 812px;
+    height: 812px; /* Fixed height */
     margin: 0 auto;
     border-radius: 36px;
     overflow: hidden;
